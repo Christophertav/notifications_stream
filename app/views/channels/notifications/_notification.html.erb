@@ -1,0 +1,9 @@
+<turbo-stream action="prepend" target="notifications">
+  <template>
+    <%= turbo_frame_tag "#{dom_id notification}" do %>
+      <div class="text-ellipsis" data-controller="notification" data-notification-timer-value='5000' data-notification-target='notification'>
+        <%= render partial: "notifications/notification_types/notification_#{notification.notification_type || "base" }", locals: { notification: notification } %>
+      </div>
+    <% end %>
+  </template>
+</turbo-stream>

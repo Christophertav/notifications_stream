@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Notifications</h1>
+
+  <%= render 'search_form', query: @query %>
+
+  <%= turbo_frame_tag :table_notifications do %>
+    <%= render partial: 'table', locals: { notifications: @notifications } %>
+  <% end %>
+</div>

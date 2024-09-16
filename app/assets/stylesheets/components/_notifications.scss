@@ -1,0 +1,23 @@
+.notifications_wrapper {
+  // padding-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: absolute;
+  top: 90px;
+  right: 3rem;
+  // height: 140px;
+  width: calc(100vw - 3rem);
+  max-width: calc(100vw - 3rem);
+  overflow: none;
+  pointer-events: none;
+
+  .scrollable-div {
+    max-height: 140px;
+    position: fixed;
+    top: 70px;
+    pointer-events: all;
+    overflow: auto;
+    right: 0;
+  }
+}

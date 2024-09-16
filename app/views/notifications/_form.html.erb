@@ -1,0 +1,7 @@
+<%= simple_form_for @notification do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.association :user, collection: User.pluck(:email, :id) %>
+  <%= f.input :notification_type, collection: Notification.notification_types.keys %>
+  <%= f.submit %>
+<% end %>

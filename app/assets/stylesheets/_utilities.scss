@@ -1,0 +1,12 @@
+.scrollable-div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: none;
+  white-space: nowrap;
+}

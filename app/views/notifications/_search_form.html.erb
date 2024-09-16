@@ -1,0 +1,9 @@
+<%= simple_form_for query, url: notifications_path, html: { method: :get, data: { turbo_stream: true, controller: 'form' } } do |f| %>
+  <%= f.text_field :title_i_cont, placeholder: 'Titre', data: { action: 'input->form#submitTurboForm' } %>
+
+  <%= f.text_field :content_i_cont, placeholder: 'Content', data: { action: 'input->form#submitTurboForm' } %>
+
+  <%= f.select :user_id_eq, options_for_select(User.pluck(:email, :id), @search_params&.dig(:user_id_eq)), { include_blank: true }, data: { action: 'input->form#submitTurboForm' } %>
+
+  <%= f.submit "Rechercher" %>
+<% end %>

@@ -1,0 +1,10 @@
+<% if current_user %>
+  <%= turbo_stream_from "#{ dom_id current_user }_notifications" %>
+  <div class="notifications_wrapper">
+    <div class="position-relative flex-grow-1">
+      <div class="scrollable-div">
+        <%= turbo_frame_tag 'notifications' %>
+      </div>
+    </div>
+  </div>
+<% end %>
