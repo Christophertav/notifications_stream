@@ -1,0 +1,3 @@
+<%= turbo_stream.update :table_notifications do %>
+  <%= render partial: 'table', locals: { notifications: @notifications, query: @query, pagy: @pagy } %>
+<% end %>

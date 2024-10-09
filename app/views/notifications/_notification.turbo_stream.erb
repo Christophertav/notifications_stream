@@ -1,0 +1,7 @@
+<%= turbo_stream.prepend :notifications do %>
+  <%= render partial: "notifications/notification_types/#{notification.notification_type || 'base'}", locals: { notification: notification } %>
+<% end %>
+
+<%= turbo_stream.update :notifications_count do %>
+  <%= render partial: 'shared/bubble', locals: { items_count: user.notifications.count } %>
+<% end %>

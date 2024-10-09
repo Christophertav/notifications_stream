@@ -1,0 +1,30 @@
+.pill-status {
+  border-radius: 16px;
+  padding: 2px 8px 2px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  width: max-content;
+}
+
+.pill-alert {
+  color: #EF6820;
+  background: $red;
+  border: 1px solid $warning;
+}
+
+.pill-success {
+  border: 1px solid $success;
+  background: #ECFDF3;
+  color: #067647;
+}
+
+.pill-notice {
+  border: 1px solid $notice;
+  background: #FEF3F2;
+  color: #EF6820;
+}

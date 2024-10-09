@@ -7,15 +7,14 @@ class NotificationsController < ApplicationController
       @search_params = search_params
       @query = @all_notifications.ransack(@search_params)
     end
-    @notifications = @query.result(distinct: true)
-
+    @all_notifications = @query.result(distinct: true)
+    @pagy, @notifications = pagy_countless(@all_notifications, limit: 8)
     respond_to do |format|
       format.html
-      format.turbo_stream { render turbo_stream: turbo_stream.update(:table_notifications, partial: 'table', locals: { notifications: @notifications }) }
+      format.turbo_stream
     end
   end
   def new
-    @test = true
     @notification = Notification.new(
       title: 'Some title',
       content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
@@ -40,6 +39,6 @@ class NotificationsController < ApplicationController
   end
 
   def search_params
-    params.require(:q).permit(:title_i_cont, :content_i_cont, :user_id_eq)
+    params.require(:q).permit(:title_i_cont, :content_i_cont, :notification_type_eq, :user_id_eq, :user_actable_of_Company_type_name_or_user_actable_of_Alumni_type_name_i_cont, :s)
   end
 end

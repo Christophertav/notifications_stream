@@ -10,11 +10,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <%# app/views/layouts/application.html.erb %>
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    <%= render "channels/notifications/notification_stream" %>
 
+    <%= render partial: "channels/notifications/notification_stream" %>
     <%= yield %>
   </body>
+
 </html>

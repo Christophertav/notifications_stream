@@ -1,12 +1,28 @@
-<table>
+<table class="custom-table border border-light-gray">
   <thead>
-      <tr>
-        <th>Title</th>
-        <th>Content</th>
+      <tr class='border border-light-gray'>
+        <th>
+          <%= sort_link(query, :title, class: 'text-decoration-none') do %>
+            Title
+          <% end %>
+        </th>
+        <th>
+          <%= sort_link(query, :content, class: 'text-decoration-none') do %>
+            Content
+          <% end %>
+        </th>
+        <th>Notification Type</th>
         <th>User</th>
+        <th>Actable</th>
+        <th>Actable Type</th>
       </tr>
   </thead>
   <tbody>
-    <%= render @notifications %>
+    <%= render partial: "notifications/notification", collection: notifications, as: :notification, formats: [:html] %>
   </tbody>
 </table>
+<% if pagy.prev || pagy.next %>
+    <div class="d-flex justify-content-center align-items-baseline my-5 gap-3">
+      <%== pagy_bootstrap_nav(pagy, locale: 'fr') %>
+    </div>
+<% end %>

@@ -1,0 +1,17 @@
+.bubble {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E60E05;
+  color: white;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  font-size: 12px;
+  top: -10%;
+  right: -10%;
+  text-overflow: ellipsis;
+  overflow: auto;
+  white-space: nowrap;
+}

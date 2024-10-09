@@ -1,5 +1,12 @@
-<tr>
+<tr class='border border-light-gray'>
   <td><%= notification.title %></td>
   <td><%= notification.content %></td>
-  <td><%= notification.user&.email %></td>
+  <td>
+    <div class="pill-status pill-<%= notification.notification_type %>">
+      <%= notification.notification_type %>
+    </div>
+  </td>
+  <td><%= notification.user.email %></td>
+  <td><%= notification.user.actable&.name %></td>
+  <td><%= notification.user.actable_type %></td>
 </tr>
